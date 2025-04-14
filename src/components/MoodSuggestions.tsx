@@ -3,7 +3,6 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Utensils, Music, Film, ActivityIcon } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import SuggestionItem from "./SuggestionItem";
 import { getSuggestions } from "@/data/suggestions";
 
@@ -22,7 +21,7 @@ const MoodSuggestions: React.FC<MoodSuggestionsProps> = ({ mood, onBack }) => {
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Moods
         </Button>
         <h2 className="text-2xl font-bold">
-          Your <span className="text-purple-600 capitalize">{mood}</span> Menu
+          Your <span className="text-mood-purple capitalize">{mood}</span> Menu
         </h2>
       </div>
 

@@ -2,15 +2,37 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/components/ui/use-toast";
-import { Smile, Frown, Coffee, Music, Film, ActivityIcon } from "lucide-react";
+import { 
+  Smile, 
+  Frown, 
+  Coffee, 
+  Music, 
+  Film, 
+  ActivityIcon, 
+  Heart, 
+  Zap, 
+  Clock, 
+  Sunset, 
+  Sun, 
+  Cloud, 
+  CloudDrizzle,
+  Sparkles 
+} from "lucide-react";
 import MoodSuggestions from "@/components/MoodSuggestions";
 
 const moods = [
-  { id: "happy", name: "Happy", icon: <Smile className="h-10 w-10 text-yellow-500" /> },
-  { id: "sad", name: "Sad", icon: <Frown className="h-10 w-10 text-blue-500" /> },
-  { id: "bored", name: "Bored", icon: <Coffee className="h-10 w-10 text-orange-500" /> },
-  { id: "stressed", name: "Stressed", icon: <ActivityIcon className="h-10 w-10 text-red-500" /> },
-  { id: "energized", name: "Energized", icon: <Music className="h-10 w-10 text-purple-500" /> },
+  { id: "happy", name: "Happy", icon: <Smile className="h-10 w-10 text-mood-yellow" /> },
+  { id: "joyful", name: "Joyful", icon: <Sparkles className="h-10 w-10 text-mood-pink" /> },
+  { id: "romantic", name: "Romantic", icon: <Heart className="h-10 w-10 text-mood-coral" /> },
+  { id: "inspired", name: "Inspired", icon: <Zap className="h-10 w-10 text-mood-purple" /> },
+  { id: "peaceful", name: "Peaceful", icon: <Sunset className="h-10 w-10 text-mood-teal" /> },
+  { id: "nostalgic", name: "Nostalgic", icon: <Clock className="h-10 w-10 text-mood-skyblue" /> },
+  { id: "sad", name: "Sad", icon: <Frown className="h-10 w-10 text-mood-lavender" /> },
+  { id: "bored", name: "Bored", icon: <Coffee className="h-10 w-10 text-mood-orange" /> },
+  { id: "stressed", name: "Stressed", icon: <ActivityIcon className="h-10 w-10 text-mood-maroon" /> },
+  { id: "anxious", name: "Anxious", icon: <CloudDrizzle className="h-10 w-10 text-mood-mint" /> },
+  { id: "energized", name: "Energized", icon: <Music className="h-10 w-10 text-mood-green" /> },
+  { id: "tired", name: "Tired", icon: <Cloud className="h-10 w-10 text-mood-peach" /> },
 ];
 
 const Index = () => {
@@ -28,7 +50,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
       <header className="py-6 px-4 bg-white shadow-sm">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-purple-700">MoodMenu.com</h1>
+          <h1 className="text-3xl font-bold text-mood-purple">MoodMenu.com</h1>
           <p className="text-gray-600">Personalized suggestions based on your mood</p>
         </div>
       </header>
@@ -51,7 +73,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
               {moods.map((mood) => (
                 <Card 
                   key={mood.id} 
@@ -83,7 +105,6 @@ const Index = () => {
 
       <footer className="bg-gray-100 py-6 mt-10">
         <div className="container mx-auto px-4 text-center text-gray-600">
-          <p>© {new Date().getFullYear()} MoodMenu.com - Get recommendations based on your mood</p>
           <p className="mt-2 text-sm">No login required. Just pick a mood and get instant suggestions.</p>
         </div>
       </footer>
